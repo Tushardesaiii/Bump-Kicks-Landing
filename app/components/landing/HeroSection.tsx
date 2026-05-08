@@ -1,115 +1,132 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Smartphone, Tablet, Monitor, CreditCard } from "lucide-react";
+import { Star, Play, Download, Heart } from "lucide-react";
 
 export function HeroSection() {
+  // Official badge URLs from stable CDNs
+  const appleStoreBadge = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg";
+  const googlePlayBadge = "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg";
+
   return (
-    <>
-      <section className="relative pt-30 pb-20 overflow-hidden">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            {/* Text Content */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              
-              
-              <h1 className="text-6xl md:text-8xl  mb-8 leading-[0.95] tracking-tight text-text-main">
-                Baby Kick <br />
-                Counter <span className="text-brand-pink">Bumpsy</span>
-              </h1>
-              
-              <p className="text-xl text-text-muted mb-12 leading-relaxed max-w-xl font-normal">
-                Minimal, stress-free, and made for calm reassurance. Track fetal movements 
-                with a single tap and monitor your baby's patterns with ease.
-              </p>
+    <section className="relative pt-24 pb-0 overflow-hidden bg-white">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-175 bg-gradient-to-b from-pink-50 via-white to-transparent -z-10" />
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mb-4">
-                <a 
-                  href="https://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group"
-                >
-                  <img 
-                    src="/assets/apple-store.png" 
-                    alt="Download on App Store" 
-                    className="h-16 w-auto transition-all group-hover:scale-105 active:scale-95 group-hover:shadow-2xl group-hover:shadow-brand-pink/20 rounded-xl"
-                  />
-                </a>
-                
-                <div className="flex items-center gap-5 p-4 rounded-3xl bg-white premium-shadow border border-gray-50">
-                  <div className="w-16 h-16 bg-gray-50 rounded-2xl p-1.5">
-                    <img src="/assets/qr-code.png" alt="QR Code" className="w-full h-full object-contain grayscale opacity-80" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em] mb-1">SCAN TO OPEN</p>
-                    <p className="text-sm font-semibold text-text-main">App Store Listing</p>
-                  </div>
-                </div>
-              </div>
+      <div className="container mx-auto px-6 text-center flex flex-col items-center">
+        
+        {/* 1. Pill Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-pink-100 shadow-sm mb-10"
+        >
+          <Heart size={16} className="text-[#ff5a75] fill-[#ff5a75]" />
+          <span className="text-sm font-semibold text-[#ff5a75] tracking-tight">
+            Your daily kick count, made simple
+          </span>
+        </motion.div>
 
-              <div className="inline-flex items-center gap-4 p-5 rounded-3xl bg-gray-50 border border-gray-100">
-                <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-brand-pink shadow-sm shrink-0">
-                  <ShieldCheck size={24} strokeWidth={2.5} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-sm text-text-main">Private & Secure</h4>
-                  <p className="text-xs text-text-muted font-semibold">On-device tracking. No data collection.</p>
-                </div>
-              </div>
-            </motion.div>
+        {/* 2. Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-6xl md:text-8xl font-black text-gray-900 leading-[0.85] tracking-tighter mb-10"
+        >
+          Never Miss <br /> 
+          <span className="relative inline-block">
+            a <span className="text-[#ff5a75]">Kick</span>
+            {/* Underline Decoration */}
+            <div className="absolute -bottom-2 left-0 w-full h-1.5 bg-[#ff5a75] opacity-20 rounded-full" />
+          </span>
+        </motion.h1>
 
-            {/* Image Content */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative z-10 animate-float">
-                <img 
-                  src="/assets/3screens.png" 
-                  alt="Bumpsy App Screens" 
-                  className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.12)]"
-                />
-              </div>
-              
-              {/* Soft decorative background circles */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-brand-pink/5 rounded-full blur-[120px] -z-10" />
-            </motion.div>
+        {/* 3. Description */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-lg md:text-xl text-gray-500 max-w-xl mb-8 font-medium leading-relaxed"
+        >
+          Smart tools to track, remind, and celebrate <br className="hidden md:block" /> 
+          every little movement. Because every kick counts.
+        </motion.p>
+
+        {/* 4. Action Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-8"
+        >
+          <button className="flex items-center gap-2.5 bg-[#ff5a75] text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:shadow-pink-200 transition-all active:scale-95">
+            <Download size={20} strokeWidth={3} />
+            Get the App
+          </button>
+
+          <button className="flex items-center gap-3 bg-white text-gray-900 border border-gray-100 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-50 transition-all shadow-sm active:scale-95">
+            <div className="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center">
+               <Play size={16} className="text-[#ff5a75] fill-[#ff5a75] ml-0.5" />
+            </div>
+            Watch Demo
+          </button>
+        </motion.div>
+
+        {/* 5. Rating Component */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="flex items-center justify-center gap-3 "
+        >
+          <div className="flex gap-1 text-yellow-400">
+            {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
           </div>
-        </div>
-      </section>
-
-      {/* Stats Bar */}
-      <section className="py-12 border-y border-gray-100 bg-white/50">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-            <StatItem icon={<Smartphone className="text-brand-pink" size={24} />} title="iPhone" desc="iOS 13+" />
-            <StatItem icon={<Tablet className="text-brand-lavender" size={24} />} title="iPad" desc="iPadOS 13+" />
-            <StatItem icon={<Monitor className="text-brand-mint" size={24} />} title="Mac" desc="Apple Silicon" />
-            <StatItem icon={<CreditCard className="text-brand-pink" size={24} />} title="Free" desc="with IAP" />
+          <div className="flex items-center text-gray-900 gap-2 text-lg">
+            <span className="font-black">4.8/5</span>
+            <span className="text-gray-400 font-medium">10K+ Reviews</span>
           </div>
-        </div>
-      </section>
-    </>
-  );
-}
+        </motion.div>
 
-function StatItem({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
-  return (
-    <div className="flex items-center gap-5 group">
-      <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center transition-all group-hover:scale-110 group-hover:shadow-md">
-        {icon}
+        {/* 6. Mockups Container - Uses max-w-6xl (1152px) to avoid lint errors */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+          className="relative items-center w-full max-w-6xl mx-auto px-4 md:px-0"
+        >
+            <img 
+            src="/assets/3screens.png" 
+            alt="Bumpi Kicks App Screens" 
+            className="w-full pl-16 h-auto relative z-20 select-none pointer-events-none drop-shadow-2xl"
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-pink-100 opacity-30 blur-[120px] rounded-full -z-10" />
+        </motion.div>
+
+        {/* 7. Footer App Badges - Using External CDN Assets */}
+        <motion.div 
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ delay: 1 }}
+           className="flex items-center justify-center gap-6  pb-16 w-full"
+        >
+          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+            <img 
+              src={appleStoreBadge} 
+              alt="Download on the App Store" 
+              className="h-12 w-auto"
+            />
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+            <img 
+              src={googlePlayBadge} 
+              alt="Get it on Google Play" 
+              className="h-12 w-auto" // Play store badge usually needs a slightly larger height to look visually equal to Apple's
+            />
+          </a>
+        </motion.div>
       </div>
-      <div>
-        <h5 className="font-bold text-text-main text-lg">{title}</h5>
-        <p className="text-xs text-text-muted font-semibold tracking-wider">{desc}</p>
-      </div>
-    </div>
+    </section>
   );
 }
