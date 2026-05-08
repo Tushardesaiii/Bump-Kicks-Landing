@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm-sans",
+});
 
 export const metadata: Metadata = {
   title: " Bumpsy | Fetal Movement & Pregnancy Log",
@@ -18,13 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={dmSans.variable}>
       <head>
           <link rel="icon" type="image/png" sizes="48x48" href="/playstore.png?v=2" />
           <link rel="shortcut icon" href="/playstore.png?v=2" />
           <link rel="apple-touch-icon" href="/playstore.png?v=2" />
         </head>
-      <body>{children}</body>
+      <body className={dmSans.className}>{children}</body>
     </html>
   );
 }

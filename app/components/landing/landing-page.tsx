@@ -8,10 +8,9 @@ import { CompareSection } from "./CompareSection";
 import { DownloadCTA, SupportSection } from "./DownloadSupport";
 import { FAQSection } from "./FAQSection";
 import { Footer } from "./Footer";
-import { useScrollAnimations } from "./useScrollAnimations";
 
 export function LandingPage() {
-  useScrollAnimations();
+
 
   return (
     <div>

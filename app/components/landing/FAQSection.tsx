@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const faqData = [
   {
@@ -37,7 +39,7 @@ const faqData = [
   },
   {
     q: "How much does Bumpsy cost?",
-    a: "The app is a free download with in-app purchases, including a weekly subscription at ₹399 and a lifetime purchase at ₹2,999.",
+    a: "The app is a free download with in-app purchases, including a weekly subscription and a lifetime purchase option.",
   },
   {
     q: "What is Bumpsy's main message?",
@@ -48,42 +50,58 @@ const faqData = [
 export function FAQSection() {
   const [active, setActive] = useState<number | null>(null);
 
-  const toggleFAQ = (index: number) => {
-    setActive((prev) => (prev === index ? null : index));
-  };
-
   return (
-    <section id="faq" className="faq-section">
-      <div className="container">
-        <h2>Frequently asked questions</h2>
+    <section id="faq" className="section-padding bg-brand-bg">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Frequently Asked <span className="gradient-text">Questions</span></h2>
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
+            Everything you need to know about Bumpsy and how it helps you 
+            stay connected with your baby.
+          </p>
+        </div>
 
-        <div className="faq-grid">
+        <div className="max-w-3xl mx-auto flex flex-col gap-4">
           {faqData.map((item, i) => (
             <div
               key={i}
-              className={`faq-item ${active === i ? "active" : ""}`}
+              className={`rounded-2xl border transition-all duration-300 ${
+                active === i 
+                  ? "bg-white border-brand-pink/20 shadow-xl shadow-brand-pink/5" 
+                  : "bg-white/50 border-gray-100 hover:border-gray-200"
+              }`}
             >
               <button
-                className="faq-question"
-                onClick={() => toggleFAQ(i)}
+                className="w-full px-8 py-6 text-left flex justify-between items-center gap-4"
+                onClick={() => setActive(active === i ? null : i)}
               >
-                <span>{item.q}</span>
-
-                <span className="faq-icon">
-                  {active === i ? "−" : "+"}
+                <span className={`text-lg font-bold transition-colors ${active === i ? "text-brand-pink" : "text-text-main"}`}>
+                  {item.q}
                 </span>
+                <ChevronDown 
+                  size={24} 
+                  className={`shrink-0 transition-transform duration-300 ${active === i ? "rotate-180 text-brand-pink" : "text-text-muted"}`} 
+                />
               </button>
 
-              <div
-                className="faq-answer"
-                style={{
-                  maxHeight: active === i ? "300px" : "0px",
-                }}
-              >
-                <div className="faq-answer-content">
-                  <p>{item.a}</p>
-                </div>
-              </div>
+              <AnimatePresence>
+                {active === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-8 pb-8 pt-0">
+                      <div className="h-px bg-gray-100 mb-6" />
+                      <p className="text-text-muted leading-relaxed">
+                        {item.a}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>
