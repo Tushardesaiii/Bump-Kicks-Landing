@@ -1,27 +1,27 @@
 const comparisons = [
-  { title: "Gamban vs NoGambling.app", desc: "Paid blocker with 60,000+ site list versus a full recovery stack with panic button and savings tracker.", link: "https://nogambling.app/compare/gamban-vs-nogambling.html", cta: "Read the comparison →" },
-  { title: "BetBlocker vs NoGambling.app", desc: "Free charity blocker versus a free recovery app that also tracks, intervenes in urges, and rebuilds savings.", link: "https://nogambling.app/compare/betblocker-vs-nogambling.html", cta: "Read the comparison →" },
-  { title: "GamStop vs NoGambling.app", desc: "UK self-exclusion register versus a daily recovery app. Here is how UK residents stack both for the strongest defence.", link: "https://nogambling.app/compare/gamstop-vs-nogambling.html", cta: "Read the comparison →" },
-  { title: "Gambling Therapy vs NoGambling.app", desc: "Counsellor chat support versus a full recovery stack with 5-step panic button and financial tools.", link: "https://nogambling.app/compare/gambling-therapy-vs-nogambling.html", cta: "Read the comparison →" },
-  { title: "Kick the Bet vs NoGambling.app", desc: "Minimal day-counter versus a full recovery system with crisis tools, community, and debt payoff dashboards.", link: "https://nogambling.app/compare/kick-the-bet-vs-nogambling.html", cta: "Read the comparison →" },
+  { title: "One-Tap Kick Logging", desc: "Start a session instantly and tap for each movement without a complicated setup.", link: "#features", cta: "See how it works →" },
+  { title: "Session History", desc: "Review past kick sessions and compare movement timelines across days.", link: "#features", cta: "See how it works →" },
+  { title: "Pattern Tracking", desc: "Spot active periods and notice changes in fetal movement over time.", link: "#features", cta: "See how it works →" },
+  { title: "Contraction Timer", desc: "Record contraction timing, duration, and frequency for later pregnancy.", link: "#features", cta: "See how it works →" },
+  { title: "Doctor-Ready Reports", desc: "Export movement summaries you can bring to appointments.", link: "#features", cta: "See how it works →" },
 ];
 
 const pillar = {
-  title: "7 Best Gamban alternatives for 2026",
-  desc: "We tested seven gambling recovery apps — free and paid — and ranked them on blocking, tracking, crisis support, and price.",
-  link: "https://nogambling.app/blog/best-gamban-alternatives-2026.html",
-  cta: "Read the pillar guide →",
+  title: "Bumpsy at a glance",
+  desc: "A calm pregnancy log for kick counting, movement awareness, reminders, and doctor-friendly reporting.",
+  link: "#cta-download",
+  cta: "Open download section →",
 };
 
 export function CompareSection() {
   return (
     <section className="compare-section">
       <div className="compare-container">
-        <h2>Compare NoGambling.app to popular gambling blockers</h2>
-        <p className="compare-lede">Choosing between gambling recovery tools? Here is how NoGambling.app stacks up against the most-searched alternatives. Every comparison below is honest about what each competitor does well — and where a pure blocker stops short of real recovery.</p>
+        <h2>What Bumpsy helps you do</h2>
+        <p className="compare-lede">A quick look at the core pregnancy-tracking actions built into the app: logging kicks, reviewing movement, timing contractions, and sharing reports with confidence.</p>
         <div className="compare-grid">
           {comparisons.map((c, i) => (
-            <a key={i} className="compare-card" href={c.link} target="_blank" rel="noopener noreferrer">
+            <a key={i} className="compare-card" href={c.link} target={c.link.startsWith("#") ? undefined : "_blank"} rel={c.link.startsWith("#") ? undefined : "noopener noreferrer"}>
               <h3>{c.title}</h3>
               <p>{c.desc}</p>
               <span className="compare-link">{c.cta}</span>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NoGambling.app — Quit Gambling, Track Recovery, Rebuild",
+  title: "Baby Kick Counter - Bumpsy | Fetal Movement & Pregnancy Log",
   description:
-    "The complete iOS gambling recovery app. Tracker, 5-step panic button, savings dashboard, community. Free trial · monthly, yearly, or one-time lifetime purchase · offline-first · anonymous.",
+    "Baby Kick Counter - Bumpsy helps pregnant mothers track fetal kicks, monitor movement patterns, time contractions, and share doctor-ready reports. Minimal, calm, offline, and built for reassurance.",
 };
 
 export default function RootLayout({

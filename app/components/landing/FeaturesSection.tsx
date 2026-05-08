@@ -2,77 +2,77 @@ const CheckIcon = () => (
   <svg className="checkmark" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#5DADE2"/><path d="M7 12.5l3 3 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
 );
 
-const APP_STORE = "https://apps.apple.com/rs/app/no-gambling-stop-gambling-now/id6751584830";
+const APP_STORE = "#cta-download";
 
 const features = [
   {
-    label: "Track Your Progress",
-    title: "Finally see progress instead of destruction",
-    desc: "After years of watching everything go backwards, track something going the right way for once. Your streak, your daily promises, your milestones. Proof that you're not stuck anymore.",
-    benefits: ["Live counter tracking every second gambling-free","Daily promises to set your intentions","Mood tracking and positive activity planning","Milestone achievements to celebrate progress"],
-    btn: "Get Started",
+    label: "One-Tap Kick Logging",
+    title: "Start a session instantly and log every kick in real time",
+    desc: "Open Bumpsy, start a session, and tap whenever fetal movement happens. The flow is designed to stay simple, calm, and fast so you can focus on the moment instead of the app.",
+    benefits: ["Start a session instantly","Tap once for each movement","Minimal setup with low friction","Built for quick daily use"],
+    btn: "Start Logging",
     img: "/assets/app_screenshots/streak.png",
-    alt: "Streak tracker screenshot",
+    alt: "Kick logging screenshot",
     reverse: false,
   },
   {
-    label: "Urge Management",
-    title: "Your urges have a pattern. Learn it and plan around it.",
-    desc: "Track when they hit and after a week you'll see it - maybe 9pm-midnight, maybe payday, maybe when you fight with someone. Once you know your danger zones you can prepare instead of just white-knuckling through.",
-    benefits: ["Guided breathing exercises for immediate calm","Personal motivation reminders when you need them","Track urge patterns to understand triggers","Instant support tools available 24/7"],
-    btn: "Learn More",
+    label: "Session History",
+    title: "Review previous kick sessions and movement timelines",
+    desc: "Bumpsy stores earlier sessions so you can look back on how fetal movement changed across the day or across different days of pregnancy.",
+    benefits: ["See past sessions in one place","Compare movement across days","Review activity timelines","Keep a simple history of logs"],
+    btn: "View History",
     img: "/assets/app_screenshots/urge.png",
-    alt: "Urge management screenshot",
+    alt: "Session history screenshot",
     reverse: true,
   },
   {
-    label: "Financial Recovery",
-    title: "Watch your money go up for the first time in years",
-    desc: "After years of watching it disappear, finally see numbers moving the right way. Track daily savings from not gambling, plan your debt payoff, and prove to yourself that you're digging out not deeper in.",
-    benefits: ["Smart debt payoff strategy with automatic calculations","Daily savings tracker to stay motivated","Visual progress charts showing your recovery","Financial milestones to celebrate wins"],
-    btn: "Start Recovering",
+    label: "Movement Patterns",
+    title: "Recognize active times and changes in fetal movement",
+    desc: "Track when the baby tends to be more active and notice shifts in movement patterns over time. The focus stays on reassurance and awareness.",
+    benefits: ["Spot active periods more easily","Compare activity across sessions","Notice changes in routine movement","Keep tracking simple and consistent"],
+    btn: "Explore Patterns",
     img: "/assets/app_screenshots/debt.png",
-    alt: "Debt recovery screenshot",
+    alt: "Movement pattern screenshot",
     reverse: false,
   },
   {
-    label: "Community & Support",
-    title: "You're hiding it from everyone. You don't have to hide here.",
-    desc: "You've been fighting this alone and it's not working. Connect with people on the same path, read what worked for them, share what's working for you. All anonymous, all judgment-free.",
-    benefits: ["Connect with people on the same journey","Access educational content and recovery strategies","Personal journal for reflection and growth","100% confidential and private recovery"],
-    btn: "Join Community",
+    label: "Contraction Timer",
+    title: "Track contractions by frequency, duration, and timing",
+    desc: "Use Bumpsy later in pregnancy to time contractions and keep a clear record of what you noticed, when it started, and how long it lasted.",
+    benefits: ["Record contraction timing quickly","Capture duration and frequency","Keep labor-related notes organized","Useful for later pregnancy monitoring"],
+    btn: "Time Contractions",
     img: "/assets/app_screenshots/community.png",
-    alt: "Community screenshot",
+    alt: "Contraction timer screenshot",
     reverse: true,
   },
   {
-    label: "App Protection",
-    title: "Block everything and make it impossible to relapse",
-    desc: "One app blocked means nothing. Your addiction will find another. Remove them all and sleep knowing you literally can't relapse tonight.",
-    benefits: ["Instantly block betting apps that cost you thousands","Eliminate the \"just one more bet\" trap forever","Add friction between you and financial ruin","Sleep peacefully knowing you can't relapse at 3 AM"],
-    btn: "Block Apps Now",
+    label: "Doctor-Ready Reports",
+    title: "Share movement reports with your doctor or midwife",
+    desc: "Export kick logs and movement summaries so appointments feel more informed and your tracking is easy to review together.",
+    benefits: ["Export movement data","Prepare for appointments quickly","Share clear session summaries","Keep reports easy to read"],
+    btn: "Share Reports",
     img: "/assets/app_screenshots/block-apps.png",
-    alt: "Block apps screenshot",
+    alt: "Report sharing screenshot",
     reverse: false,
   },
   {
-    label: "Daily Habits",
-    title: "Reclaim the hours you lost to gambling and build the life you deserve",
-    desc: "Gambling didn't just steal your money. It stole your time, energy, and potential. Fill that void with habits that compound into the future you actually want. Start small. Win big.",
-    benefits: ["Replace gambling time with productive routines","Build streaks that compound into real change","Connect with people who quit before you","Every restart is strength"],
-    btn: "Start Your Transformation",
+    label: "Kick Count Reminders",
+    title: "Get gentle reminders to keep a consistent routine",
+    desc: "Daily nudges help you remember to track movement without overwhelming you. The reminders are meant to be calm, simple, and easy to follow.",
+    benefits: ["Gentle reminder notifications","Support a steady tracking habit","Keep tracking consistent day to day","Designed to reduce friction"],
+    btn: "Set Reminders",
     img: "/assets/app_screenshots/daily-habits.png",
-    alt: "Daily habits screenshot",
+    alt: "Reminder screenshot",
     reverse: true,
   },
   {
-    label: "30-Day Challenge",
-    title: "Thirty days, unlocked one at a time, until you're someone who doesn't gamble",
-    desc: "Thirty days is the science-backed threshold where cravings fade and new wiring holds. One day unlocks at midnight - you can't binge your way out of this, and that's exactly the point. By Day 30 you're not trying to quit anymore - you're someone who built something else.",
-    benefits: [],
-    btn: "Start the Challenge",
+    label: "Offline Functionality",
+    title: "Track kicks anytime, even without internet",
+    desc: "Bumpsy works without Wi-Fi so you can keep logging sessions while traveling, at appointments, or wherever you need a reliable routine.",
+    benefits: ["Works offline by design","Reliable while traveling","No Wi-Fi dependency","Keeps logging available anytime"],
+    btn: "Use Offline",
     img: "/assets/app_screenshots/30-day-challenge.png",
-    alt: "30-day challenge screenshot",
+    alt: "Offline functionality screenshot",
     reverse: false,
   },
 ];
@@ -81,8 +81,8 @@ export function FeaturesSection() {
   return (
     <section id="features" className="features-section">
       <div className="container">
-        <h2>Nogambling app features - tools to stop gambling addiction</h2>
-        <p>Everything you need to stay strong, resist urges, and rebuild your life. All in the Nogambling app.</p>
+        <h2>Bumpsy features - simple tools for pregnancy reassurance</h2>
+        <p>Everything you need to track kicks, understand movement patterns, and share pregnancy logs with confidence.</p>
         <div className="features-list">
           {features.map((f, i) => (
             <div key={i} className={`feature-block animate-on-scroll${f.reverse ? " reverse" : ""}`}>
