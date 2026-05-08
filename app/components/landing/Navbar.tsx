@@ -7,7 +7,7 @@ export function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <a className="nav-logo" href="#">
-          <img src="/assets/icon.png" alt="Bumpsy App Icon" />
+          <img src="playstore.png" alt="Bumpsy App Icon" />
           <h2>Bumpsy</h2>
         </a>
         <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">☰</button>

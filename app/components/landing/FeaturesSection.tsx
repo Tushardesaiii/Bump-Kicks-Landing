@@ -2,7 +2,7 @@ const CheckIcon = () => (
   <svg className="checkmark" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#5DADE2"/><path d="M7 12.5l3 3 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
 );
 
-const APP_STORE = "#cta-download";
+const APP_STORE = "https://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727";
 
 const features = [
   {
@@ -53,26 +53,6 @@ const features = [
     btn: "Share Reports",
     img: "/assets/app_screenshots/block-apps.png",
     alt: "Report sharing screenshot",
-    reverse: false,
-  },
-  {
-    label: "Kick Count Reminders",
-    title: "Get gentle reminders to keep a consistent routine",
-    desc: "Daily nudges help you remember to track movement without overwhelming you. The reminders are meant to be calm, simple, and easy to follow.",
-    benefits: ["Gentle reminder notifications","Support a steady tracking habit","Keep tracking consistent day to day","Designed to reduce friction"],
-    btn: "Set Reminders",
-    img: "/assets/app_screenshots/daily-habits.png",
-    alt: "Reminder screenshot",
-    reverse: true,
-  },
-  {
-    label: "Offline Functionality",
-    title: "Track kicks anytime, even without internet",
-    desc: "Bumpsy works without Wi-Fi so you can keep logging sessions while traveling, at appointments, or wherever you need a reliable routine.",
-    benefits: ["Works offline by design","Reliable while traveling","No Wi-Fi dependency","Keeps logging available anytime"],
-    btn: "Use Offline",
-    img: "/assets/app_screenshots/30-day-challenge.png",
-    alt: "Offline functionality screenshot",
     reverse: false,
   },
 ];

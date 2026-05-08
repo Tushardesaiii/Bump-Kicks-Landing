@@ -1,4 +1,12 @@
-export function Footer() {
+const APP_STORE = "https://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727"
+
+
+export function Footer(
+  
+) 
+
+
+{
   return (
     <footer className="site-footer">
       <div className="container">
@@ -16,8 +24,8 @@ export function Footer() {
               <h4>Product</h4>
               <a className="footer-link" href="#features">Features</a>
               <a className="footer-link" href="#why">Why Bumpsy</a>
-              <a className="footer-link" href="#cta-download">Download</a>
-              <a className="footer-link" href="#support">Support</a>
+              <a className="footer-link" href={APP_STORE} target="_blank" rel="noopener noreferrer">Download</a>
+              <a className="footer-link" href="mailto:support@bumpsy.app">Support</a>
             </div>
             <div className="footer-section">
               <h4>Explore</h4>
@@ -45,13 +53,7 @@ export function Footer() {
             <a className="footer-link" href="mailto:support@bumpsy.app">Contact us</a>
           </div>
           <div className="footer-section">
-            <h4>Compatibility</h4>
-            <div className="social-links">
-              <a href="#cta-download" className="social-link" aria-label="iPhone">iPhone</a>
-              <a href="#cta-download" className="social-link" aria-label="iPad">iPad</a>
-              <a href="#cta-download" className="social-link" aria-label="Mac">Mac</a>
-              <a href="#cta-download" className="social-link" aria-label="Vision">Vision</a>
-            </div>
+           
           </div>
         </div>
 

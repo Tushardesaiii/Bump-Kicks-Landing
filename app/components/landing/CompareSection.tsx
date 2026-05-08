@@ -9,7 +9,7 @@ const comparisons = [
 const pillar = {
   title: "Bumpsy at a glance",
   desc: "A calm pregnancy log for kick counting, movement awareness, reminders, and doctor-friendly reporting.",
-  link: "#cta-download",
+  link: "",
   cta: "Open download section →",
 };
 
