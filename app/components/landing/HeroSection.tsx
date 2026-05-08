@@ -100,7 +100,7 @@ export function HeroSection() {
             <img 
             src="/assets/3screens.png" 
             alt="Bumpi Kicks App Screens" 
-            className="w-full lg:pl-16 h-auto relative z-20 select-none pointer-events-none drop-shadow-2xl"
+            className="w-full h-auto p-12 relative z-20 select-none pointer-events-none drop-shadow-2xl"
           />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-pink-100 opacity-30 blur-[120px] rounded-full -z-10" />
         </motion.div>
