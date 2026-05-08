@@ -58,10 +58,10 @@ export const Navbar = () => {
 
         {/* Right Side Actions */}
         <div className="flex items-center gap-8">
-          <button className="text-[15px] font-semibold text-gray-900">Log in</button>
-          <button className="bg-[#ff5a75] text-white px-7 py-3 rounded-full text-[15px] font-bold hover:shadow-lg hover:shadow-pink-100 transition-all">
-            Get Started
-          </button>
+            <a className="bg-[#ff5a75] text-white px-7 py-3 rounded-full text-[15px] font-bold hover:shadow-lg hover:shadow-pink-100 hover:bg-white hover:text-[#ff5a75] transition-all"
+             href="http://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727" target="_blank" rel="noopener noreferrer">
+            Get Started 
+          </a>
         </div>
 
       </div>

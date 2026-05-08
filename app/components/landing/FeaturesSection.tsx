@@ -108,7 +108,7 @@ const DeviceMockup = ({ img, icon, accentBg }: { img: string; icon: React.ReactN
 
   return (
     <div 
-      className="relative w-full max-w-sm mx-auto [perspective:1000px]"
+      className="relative w-full max-w-sm mx-auto perspective-[1000px]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

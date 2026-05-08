@@ -20,7 +20,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       
       <div 
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? 'max-h-[300px] opacity-100 pb-8' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-75 opacity-100 pb-8' : 'max-h-0 opacity-0'
         }`}
       >
         <p className="text-[16px] md:text-[17px] text-gray-500 leading-relaxed max-w-[90%] font-medium">

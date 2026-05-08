@@ -11,12 +11,12 @@ import {
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="flex flex-col items-center bg-transparent transition-transform duration-300 hover:scale-105">
     {/* Exact Icon Container Style */}
-    <div className="w-[72px] h-[72px] bg-[#FF5A6E]/10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center mb-5 border border-gray-50">
+    <div className="w-18 h-18 bg-[#FF5A6E]/10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center mb-5 border border-gray-50">
       <Icon className="w-10 h-10 text-[#FF5A6E]" />
     </div>
     
     <h3 className="text-[17px] font-bold text-[#1F2937] mb-2">{title}</h3>
-    <p className="text-[14px] text-[#6B7280] leading-[1.6] text-center max-w-[220px]">
+    <p className="text-[14px] text-[#6B7280] leading-[1.6] text-center max-w-55">
       {description}
     </p>
   </div>

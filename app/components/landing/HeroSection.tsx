@@ -60,10 +60,11 @@ export function HeroSection() {
           transition={{ delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-8"
         >
-          <button className="flex items-center gap-2.5 bg-[#ff5a75] text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:shadow-pink-200 transition-all active:scale-95">
+          <a className="flex items-center gap-2.5 bg-[#ff5a75] text-white px-10 py-4 rounded-full text-lg font-bold hover:shadow-2xl hover:shadow-pink-200 transition-all active:scale-95"
+             href="http://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727" target="_blank" rel="noopener noreferrer">
             <Download size={20} strokeWidth={3} />
             Get the App
-          </button>
+          </a>
 
           <button className="flex items-center gap-3 bg-white text-gray-900 border border-gray-100 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-50 transition-all shadow-sm active:scale-95">
             <div className="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center">
@@ -111,7 +112,7 @@ export function HeroSection() {
            transition={{ delay: 1 }}
            className="flex items-center justify-center gap-6  pb-16 w-full"
         >
-          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
+          <a href="http://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
             <img 
               src={appleStoreBadge} 
               alt="Download on the App Store" 
