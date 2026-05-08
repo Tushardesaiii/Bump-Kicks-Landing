@@ -11,7 +11,7 @@ export function HeroSection() {
   return (
     <section className="relative pt-24 pb-0 overflow-hidden bg-white">
       {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-175 bg-gradient-to-b from-pink-50 via-white to-transparent -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-175 bg-linear-to-b from-pink-50 via-white to-transparent -z-10" />
 
       <div className="container mx-auto px-6 text-center flex flex-col items-center">
         
