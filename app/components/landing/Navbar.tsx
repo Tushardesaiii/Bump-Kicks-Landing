@@ -15,7 +15,7 @@ export function Navbar() {
           <a className="nav-link" href="#features">Features</a>
           <a className="nav-link" href="#why">Why Bumpsy</a>
           <a className="nav-link" href="#faq">FAQ</a>
-          <a className="nav-btn" href="#cta-download">Download App</a>
+          <a className="nav-btn" href="https://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727" target="_blank" rel="noopener noreferrer">Download App</a>
         </div>
       </div>
     </nav>

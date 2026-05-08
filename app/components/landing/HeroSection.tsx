@@ -11,11 +11,15 @@ export function HeroSection() {
             <div className="hero-image">
               <img src="/assets/3screens.png" alt="Bumpsy app screenshots showing kick logging, movement history, and contraction tracking" />
             </div>
+
+
             <div className="hero-downloads">
-              <a className="apple-store-btn" href="#cta-download">
+              <a className="apple-store-btn" href="https://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727"  target="_blank" rel="noopener noreferrer">
                 <img className="apple-store-img" src="/assets/apple-store.png" alt="Download Bumpsy from the App Store" />
               </a>
               <div className="qr-section">
+
+
                 <p className="qr-text">Or scan the QR code to open the listing instantly</p>
                 <div className="qr-code">
                   <img src="/assets/qr-code.png" alt="QR code for the Bumpsy App Store listing" />
@@ -29,6 +33,8 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
+
+            
           </div>
         </div>
       </section>
