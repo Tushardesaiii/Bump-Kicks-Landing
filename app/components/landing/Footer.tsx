@@ -39,8 +39,7 @@ export function Footer(
               <a className="footer-link" href="#cta-download">iPhone</a>
               <a className="footer-link" href="#cta-download">iPad</a>
               <a className="footer-link" href="#cta-download">Mac</a>
-              <a className="footer-link" href="#cta-download">Apple Vision</a>
-            </div>
+             </div>
           </div>
         </div>
 
