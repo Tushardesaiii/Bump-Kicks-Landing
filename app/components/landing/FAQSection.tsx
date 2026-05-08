@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 const faqData = [
   {
@@ -31,7 +31,7 @@ const faqData = [
   },
   {
     q: "Who is Bumpsy best for?",
-    a: "The app is primarily aimed at pregnant mothers in the second and third trimester, especially around 28 to 40 weeks or when kick counting is recommended by an OB/GYN or midwife.",
+    a: "The app is primarily aimed at pregnant mothers in the second and third trimester, especially around 28 to 40 weeks.",
   },
   {
     q: "What platforms does Bumpsy support?",
@@ -43,7 +43,7 @@ const faqData = [
   },
   {
     q: "What is Bumpsy's main message?",
-    a: "The app centers on calm reassurance, simplicity, and emotional connection with the baby: every kick matters, and feel every kick. Count every moment.",
+    a: "The app centers on calm reassurance, simplicity, and emotional connection with the baby: every kick matters.",
   },
 ];
 
@@ -51,37 +51,38 @@ export function FAQSection() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="section-padding bg-brand-bg">
+    <section id="faq" className="section-padding bg-gray-50">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Frequently Asked <span className="gradient-text">Questions</span></h2>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto">
+        <div className="text-center mb-24">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-text-main">
+            Common <span className="text-brand-pink">Questions</span>
+          </h2>
+          <p className="text-xl text-text-muted max-w-2xl mx-auto font-normal">
             Everything you need to know about Bumpsy and how it helps you 
             stay connected with your baby.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto flex flex-col gap-4">
+        <div className="max-w-4xl mx-auto flex flex-col gap-6">
           {faqData.map((item, i) => (
             <div
               key={i}
-              className={`rounded-2xl border transition-all duration-300 ${
+              className={`rounded-[2.5rem] border-2 transition-all duration-300 ${
                 active === i 
-                  ? "bg-white border-brand-pink/20 shadow-xl shadow-brand-pink/5" 
-                  : "bg-white/50 border-gray-100 hover:border-gray-200"
+                  ? "bg-white border-brand-pink shadow-2xl shadow-brand-pink/5" 
+                  : "bg-white border-transparent hover:border-gray-200"
               }`}
             >
               <button
-                className="w-full px-8 py-6 text-left flex justify-between items-center gap-4"
+                className="w-full px-10 py-8 text-left flex justify-between items-center gap-6"
                 onClick={() => setActive(active === i ? null : i)}
               >
-                <span className={`text-lg font-bold transition-colors ${active === i ? "text-brand-pink" : "text-text-main"}`}>
+                <span className={`text-xl md:text-2xl font-bold transition-colors ${active === i ? "text-brand-pink" : "text-text-main"}`}>
                   {item.q}
                 </span>
-                <ChevronDown 
-                  size={24} 
-                  className={`shrink-0 transition-transform duration-300 ${active === i ? "rotate-180 text-brand-pink" : "text-text-muted"}`} 
-                />
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${active === i ? "bg-brand-pink text-white rotate-180" : "bg-gray-100 text-text-muted"}`}>
+                  {active === i ? <Minus size={24} strokeWidth={3} /> : <Plus size={24} strokeWidth={3} />}
+                </div>
               </button>
 
               <AnimatePresence>
@@ -93,9 +94,9 @@ export function FAQSection() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-8 pb-8 pt-0">
-                      <div className="h-px bg-gray-100 mb-6" />
-                      <p className="text-text-muted leading-relaxed">
+                    <div className="px-10 pb-10 pt-0">
+                      <div className="h-px bg-gray-100 mb-8" />
+                      <p className="text-lg md:text-xl text-text-muted leading-relaxed font-normal">
                         {item.a}
                       </p>
                     </div>
