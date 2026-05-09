@@ -107,21 +107,31 @@ export function HeroSection() {
           </a>
         </motion.div>
 
-        {/* 6. Mockups Container - Uses max-w-6xl (1152px) to avoid lint errors */}
+       {/* 6. Mockups Container - Responsive Dual-Image Layout */}
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-          className="relative items-center w-full max-w-6xl mx-auto px-4 md:px-0"
+          className="relative w-full max-w-6xl mx-auto px-4 md:px-0 flex justify-center"
         >
-            <img 
-            src="/assets/3screens.png" 
-            alt="Bumpi Kicks App Screens" 
-            className="w-full h-auto p-12 relative z-20 select-none pointer-events-none drop-shadow-2xl"
+          {/* Desktop Image: Only visible on md (768px) and up */}
+          <img 
+            src="/assets/5screens.jpeg" 
+            alt="Bumpi Kicks Desktop View" 
+            className="hidden md:block w-full h-auto p-6 relative z-20 select-none pointer-events-none"
           />
+
+          {/* Mobile Image: Only visible on small screens. 
+              w-[115%] makes it slightly wider than the container for a "bigger" feel. */}
+          <img 
+            src="/assets/3screens.png" 
+            alt="Bumpi Kicks Mobile View" 
+            className="block md:hidden w-[155%] max-w-none h-auto relative z-20 select-none pointer-events-none"
+          />
+          
+          {/* Background Glow - No shadow, just a soft blur layer */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-pink-100 opacity-30 blur-[120px] rounded-full -z-10" />
         </motion.div>
-
         
       </div>
     </section>
