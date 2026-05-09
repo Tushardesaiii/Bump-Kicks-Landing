@@ -32,7 +32,7 @@ export const Navbar = () => {
     "How It Works",
     "Screenshots",
     "Blog",
-    "Pricing",
+    
   ];
 
   return (
@@ -82,7 +82,7 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-8">
             <a
-              className="bg-[#ff5a75] text-white px-7 py-3 rounded-full text-[15px] font-bold hover:shadow-lg hover:shadow-pink-100 hover:bg-white hover:text-[#ff5a75] transition-all"
+              className="bg-[#ff5a75] text-white  px-7 py-3 rounded-full text-[15px]  hover:shadow-pink-100 hover:bg-white hover:text-[#ff5a75]  hover:border hover:border-[#ff5a75]"
               href="http://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727"
               target="_blank"
               rel="noopener noreferrer"
@@ -111,7 +111,7 @@ export const Navbar = () => {
             lg:hidden overflow-hidden transition-all duration-300 ease-in-out
             ${
               mobileMenuOpen
-                ? "max-h-[500px] opacity-100"
+                ? "max-h-125 opacity-100"
                 : "max-h-0 opacity-0"
             }
           `}

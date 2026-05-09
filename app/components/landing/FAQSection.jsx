@@ -8,7 +8,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
         onClick={onClick}
         className="w-full py-8 flex items-center justify-between text-left group"
       >
-        <span className={`text-[19px] md:text-[21px] font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-[#FF5A6E]' : 'text-[#1F2937] group-hover:text-[#FF5A6E]'}`}>
+        <span className={`text-[19px] md:text-[21px] font-bold tracking-tight transition-colors duration-300 text-[#1F2937]`}>
           {question}
         </span>
         <div className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-[#FFF1F2] rotate-180' : 'bg-transparent'}`}>

@@ -11,7 +11,7 @@ import {
 const FeatureCard = ({ icon: Icon, title, description }) => (
   <div className="flex flex-col items-center bg-transparent transition-transform duration-300 hover:scale-105">
     {/* Exact Icon Container Style */}
-    <div className="w-18 h-18 bg-[#FF5A6E]/10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center mb-5 border border-gray-50">
+    <div className="w-18 h-18 bg-[#FF5A6E]/5 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex items-center justify-center mb-5 border border-gray-50">
       <Icon className="w-10 h-10 text-[#FF5A6E]" />
     </div>
     
@@ -72,7 +72,7 @@ const FeatureGrid = () => {
             <span className="text-[#FF5A6E]">All in One Place</span>
           </h2>
           <p className="mt-5 text-[#6B7280] text-[16px] md:text-[18px] max-w-xl mx-auto font-medium">
-            Smart, simple, and designed with love to support your pregnancy journey.
+            Smart, simple, and designed with love to support <br className="hidden md:block" /> your pregnancy journey.
           </p>
         </div>
 
