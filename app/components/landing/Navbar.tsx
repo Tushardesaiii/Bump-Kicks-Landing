@@ -12,28 +12,16 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-
       setIsAtTop(currentScrollPos < 10);
-
-      setVisible(
-        prevScrollPos > currentScrollPos || currentScrollPos < 10
-      );
-
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
       setPrevScrollPos(currentScrollPos);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
-  const navLinks = [
-    "Features",
-    "How It Works",
-    "Screenshots",
-    "Blog",
-    
-  ];
+  const navLinks = ["Features", "How It Works", "Screenshots", "Blog"];
 
   return (
     <>
@@ -48,7 +36,7 @@ export const Navbar = () => {
           }
         `}
       >
-        <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 flex items-center justify-between">
           
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer shrink-0">
@@ -59,7 +47,6 @@ export const Navbar = () => {
                 className="rounded-xl object-cover"
               />
             </div>
-
             <span className="text-[18px] sm:text-[22px] font-bold text-gray-900 tracking-tight whitespace-nowrap">
               Bumpi Kicks
             </span>
@@ -82,7 +69,13 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-8">
             <a
-              className="bg-[#ff5a75] text-white  px-7 py-3 rounded-full text-[15px]  hover:shadow-pink-100 hover:bg-white hover:text-[#ff5a75]  hover:border hover:border-[#ff5a75]"
+              className={`
+                px-7 py-3 rounded-full text-[15px] font-medium transition-all duration-300
+                /* Normal State */
+                bg-[#ff5a75] text-white border border-transparent
+                /* Hover State - Fixed by keeping border transparent above */
+                hover:bg-white hover:text-[#ff5a75] hover:border-[#ff5a75] hover:shadow-lg hover:shadow-pink-100
+              `}
               href="http://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727"
               target="_blank"
               rel="noopener noreferrer"
@@ -97,11 +90,7 @@ export const Navbar = () => {
             className="lg:hidden w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center bg-white text-gray-800 active:scale-95 transition"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? (
-              <X size={22} />
-            ) : (
-              <Menu size={22} />
-            )}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
@@ -109,15 +98,10 @@ export const Navbar = () => {
         <div
           className={`
             lg:hidden overflow-hidden transition-all duration-300 ease-in-out
-            ${
-              mobileMenuOpen
-                ? "max-h-125 opacity-100"
-                : "max-h-0 opacity-0"
-            }
+            ${mobileMenuOpen ? "max-h-125 opacity-100" : "max-h-0 opacity-0"}
           `}
         >
           <div className="px-4 sm:px-6 pb-6 pt-4 bg-white/95 backdrop-blur-xl border-t border-gray-100">
-            
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <li key={link}>
@@ -133,7 +117,7 @@ export const Navbar = () => {
             </ul>
 
             <a
-              className="mt-5 flex items-center justify-center bg-[#ff5a75] text-white px-7 py-3.5 rounded-full text-[15px] font-bold hover:shadow-lg hover:shadow-pink-100 transition-all"
+              className="mt-5 flex items-center justify-center bg-[#ff5a75] text-white px-7 py-3.5 rounded-full text-[15px] font-bold transition-all"
               href="http://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727"
               target="_blank"
               rel="noopener noreferrer"
@@ -144,7 +128,6 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* Optional overlay */}
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black/20 z-40 lg:hidden"
