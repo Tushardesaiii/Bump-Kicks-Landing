@@ -15,12 +15,20 @@ export function LandingPage() {
     <div>
       <Navbar />
       <main>
-        <HeroSection />
+        <section id="hero">
+          <HeroSection />
+        </section>
        
-        <FeatureGrid />
-        <Testemonial/>
+        <section id="features">
+          <FeatureGrid />
+        </section>
+        <section id="how-it-works">
+          <Testemonial/>
+        </section>
          
-        <FAQSection />
+        <section id="faq">
+          <FAQSection />
+        </section>
 
       </main>
       <Footer />

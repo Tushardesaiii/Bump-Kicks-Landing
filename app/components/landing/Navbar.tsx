@@ -21,7 +21,12 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
-  const navLinks = ["Features", "How It Works", "Screenshots", "Blog"];
+  const navLinks = [
+    { label: "Features", href: "#features" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Screenshots", href: "#screenshots" },
+    { label: "Blog", href: "#" }
+  ];
 
   return (
     <>
@@ -55,12 +60,12 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <li key={link}>
+              <li key={link.label}>
                 <a
-                  href="#"
+                  href={link.href}
                   className="text-[15px] font-medium text-gray-600 hover:text-[#ff5a75] transition-colors"
                 >
-                  {link}
+                  {link.label}
                 </a>
               </li>
             ))}
@@ -104,13 +109,13 @@ export const Navbar = () => {
           <div className="px-4 sm:px-6 pb-6 pt-4 bg-white/95 backdrop-blur-xl border-t border-gray-100">
             <ul className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <li key={link}>
+                <li key={link.label}>
                   <a
-                    href="#"
+                    href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className="block py-3 px-4 rounded-2xl text-[15px] font-medium text-gray-700 hover:bg-pink-50 hover:text-[#ff5a75] transition-all"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}

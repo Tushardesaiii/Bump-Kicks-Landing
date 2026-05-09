@@ -109,6 +109,7 @@ export function HeroSection() {
 
        {/* 6. Mockups Container - Responsive Dual-Image Layout */}
         <motion.div
+         id = "screenshots"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
@@ -116,6 +117,7 @@ export function HeroSection() {
         >
           {/* Desktop Image: Only visible on md (768px) and up */}
           <img 
+         
             src="/assets/5screens.jpeg" 
             alt="Bumpi Kicks Desktop View" 
             className="hidden md:block w-full h-auto p-6 relative z-20 select-none pointer-events-none"

@@ -50,10 +50,10 @@ export function Footer() {
             <div>
               <h4 className="font-bold text-sm text-gray-900 mb-6 uppercase tracking-wider">Product</h4>
               <ul className="space-y-4 text-[14px] text-gray-600">
-                <li><a href="#" className="hover:text-brand-pink transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-brand-pink transition-colors">How It Works</a></li>
-                <li><a href="#" className="hover:text-brand-pink transition-colors">Screenshots</a></li>
-                <li><a href="#" className="hover:text-brand-pink transition-colors">Pricing</a></li>
+                <li><a href="#features" className="hover:text-brand-pink transition-colors">Features</a></li>
+                <li><a href="#how-it-works" className="hover:text-brand-pink transition-colors">How It Works</a></li>
+                <li><a href="#screenshots" className="hover:text-brand-pink transition-colors">Screenshots</a></li>
+              
               </ul>
             </div>
             <div>
