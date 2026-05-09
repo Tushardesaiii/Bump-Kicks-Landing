@@ -115,21 +115,23 @@ export function HeroSection() {
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
           className="relative w-full max-w-6xl mx-auto px-4 md:px-0 flex justify-center"
         >
-          {/* Desktop Image: Only visible on md (768px) and up */}
-          <img 
-         
-            src="/assets/5screens.png" 
-            alt="Bumpi Kicks Desktop View" 
-            className="hidden md:block w-full h-auto p-3 relative z-20 select-none pointer-events-none"
-          />
+          {/* Desktop Image: cropped container to remove image whitespace */}
+          <div className="hidden md:block w-full max-w-4xl overflow-hidden rounded-xl relative z-20">
+            <img
+              src="/assets/5screens.png"
+              alt="Bumpi Kicks Desktop View"
+              className="block w-full h-135 object-cover select-none pointer-events-none"
+            />
+          </div>
 
-          {/* Mobile Image: Only visible on small screens. 
-              w-[115%] makes it slightly wider than the container for a "bigger" feel. */}
-          <img 
-            src="/assets/3screens.png" 
-            alt="Bumpi Kicks Mobile View" 
-            className="block md:hidden w-[155%] p-5 max-w-none h-auto relative z-20 select-none pointer-events-none"
-          />
+          {/* Mobile Image: cropped container to remove image whitespace and allow slight overflow */}
+          <div className="block md:hidden w-[155%] max-w-none -mx-6 overflow-hidden rounded-xl relative z-20">
+            <img
+              src="/assets/3screens.png"
+              alt="Bumpi Kicks Mobile View"
+              className="block w-full h-65 object-cover select-none pointer-events-none"
+            />
+          </div>
           
           {/* Background Glow - No shadow, just a soft blur layer */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-pink-100 opacity-30 blur-[120px] rounded-full -z-10" />
