@@ -118,9 +118,9 @@ export function HeroSection() {
           {/* Desktop Image: Only visible on md (768px) and up */}
           <img 
          
-            src="/assets/5screens.jpeg" 
+            src="/assets/5screens.png" 
             alt="Bumpi Kicks Desktop View" 
-            className="hidden md:block w-full h-auto p-6 relative z-20 select-none pointer-events-none"
+            className="hidden md:block w-full h-auto p-3 relative z-20 select-none pointer-events-none"
           />
 
           {/* Mobile Image: Only visible on small screens. 
@@ -128,7 +128,7 @@ export function HeroSection() {
           <img 
             src="/assets/3screens.png" 
             alt="Bumpi Kicks Mobile View" 
-            className="block md:hidden w-[155%] max-w-none h-auto relative z-20 select-none pointer-events-none"
+            className="block md:hidden w-[155%] p-5 max-w-none h-auto relative z-20 select-none pointer-events-none"
           />
           
           {/* Background Glow - No shadow, just a soft blur layer */}
