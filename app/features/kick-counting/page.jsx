@@ -7,7 +7,6 @@ import { Heart, BarChart3, Target, Bell, MousePointerClick, TrendingUp, ShieldCh
  const appleStoreBadge = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg";
   const googlePlayBadge = "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg";
 
-
 export default function KickCountingPage()
 
 
@@ -15,73 +14,93 @@ export default function KickCountingPage()
   return (
     <div className="bg-white pt-12 font-sans text-slate-800">
       {/* Hero Section */}
-      <section className="relative max-w-7xl mx-auto px-6 pt-16 pb-24 flex flex-col md:flex-row items-center overflow-hidden">
+      <section className="relative max-w-7xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32 flex flex-col md:flex-row items-center">
+        
+        {/* --- BACKGROUND DECORATIVE EFFECTS --- */}
+        <div className="absolute top-[10%] left-[5%] opacity-[0.03] -z-10">
+          <Heart size={120} fill="#FF5A75" className="text-[#FF5A75]" />
+        </div>
+        
+        {/* --- LEFT CONTENT SECTION --- */}
         <div className="md:w-1/2 z-10">
-          <nav className="flex items-center space-x-2 text-sm text-[#ff5A6e] mb-6 font-medium">
-            <span>Features</span>
-            <span>/</span>
-            <span className="text-black/80">Kick Counting</span>
+          <nav className="flex items-center space-x-2 text-sm font-medium mb-8">
+            <span className="text-[#FF5A75]">Features</span>
+            <span className="text-slate-300">/</span>
+            <span className="text-slate-900/80">Kick Counting</span>
           </nav>
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
-            Kick Counting <span className="text-[#ff5a75] whitespace-nowrap">Track Every Little Move</span>
+
+          <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
+            Kick Counting <br />
+            <span className="text-[#FF5A75]">Track Every Little Move</span>
           </h1>
-          <p className="text-slate-500 text-lg mb-10 max-w-md">
+
+          <p className="text-slate-500 text-lg mb-12 max-w-md leading-relaxed">
             Count, track, and celebrate every kick your baby makes. Bumpi Kicks helps you stay connected with your little one's activity and growth.
           </p>
 
-          <div className="space-y-6 mb-10">
+          {/* Feature List */}
+          <div className="space-y-10 mb-14">
             <FeatureItem 
-              icon={<Heart className="text-[#ff5a75]" size={20} />}
+              icon={<Heart size={20} className="text-[#FF5A75]" />}
               title="Accurate Kick Tracking"
-              desc={<>
-                Easily count kicks with a simple tap.<br/>
-                Our smart algorithm helps filter out accidental taps.
-              </>}
+              desc={<>Easily count kicks with a simple tap.<br className="hidden md:block" /> Our smart algorithm helps filter out accidental taps.</>}
             />
             <FeatureItem 
-              icon={<BarChart3 className="text-[#ff5a75]" size={20} />}
+              icon={<BarChart3 size={20} className="text-[#FF5A75]" />}
               title="Daily & Weekly Insights"
-              desc={<>See patterns and trends in your baby's movements<br/>with clear charts and reports.</>}
+              desc={<>See patterns and trends in your baby's movements<br className="hidden md:block" /> with clear charts and reports.</>}
             />
             <FeatureItem 
-              icon={<Bell className="text-[#ff5a75]" size={20} />}
+              icon={<Bell size={20} className="text-[#FF5A75]" />}
               title="Set Goals & Get Reminders"
-              desc={<>Set daily kick goals and get gentle reminders<br/>to help you stay consistent.</>}
+              desc={<>Set daily kick goals and get gentle reminders<br className="hidden md:block" /> to help you stay consistent.</>}
             />
           </div>
 
-  
-                  <motion.div 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
-                    className="flex items-start justify-start gap-6 w-full pl-1 md:pl-2"
-                  >
-                   <a href="http://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
-                     <img 
-                       src={appleStoreBadge} 
-                       alt="Download on the App Store" 
-                       className="h-12 w-auto"
-                     />
-                   </a>
-                   <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform">
-                     <img 
-                       src={googlePlayBadge} 
-                       alt="Get it on Google Play" 
-                       className="h-12 w-auto"    />
-                   </a>
-                 </motion.div>
-
+          {/* App Store Badges */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="flex items-center gap-4"
+          >
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <img src={appleStoreBadge} alt="App Store" className="h-[44px] w-auto" />
+            </a>
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <img src={googlePlayBadge} alt="Play Store" className="h-[44px] w-auto" />
+            </a>
+          </motion.div>
         </div>
 
-        {/* Phone Mockup Placeholder */}
-        <div className="md:w-1/2 mt-16 md:mt-0 flex justify-center relative">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-pink-50 rounded-full blur-3xl -z-10 opacity-60" />
+        {/* --- RIGHT MOCKUP SECTION --- */}
+        <div className="md:w-1/2 mt-20 md:mt-0 relative flex justify-center items-center">
+          
+          {/* Abstract Pink "Blobs" / Effects */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] -z-20">
+            <div className="absolute top-0 right-0 w-[70%] h-[70%] bg-[#FFF0F2] rounded-full blur-[100px] opacity-80" />
+            <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-[#FFEBEF] rounded-full blur-[80px] opacity-60" />
+          </div>
+
+          {/* Floating Hearts Around Phone */}
+          <div className="absolute top-[10%] left-[10%] opacity-40 rotate-[-15deg] z-0">
+            <Heart size={24} fill="#FF5A75" className="text-[#FF5A75]" />
+          </div>
+          <div className="absolute bottom-[15%] right-[5%] opacity-30 rotate-[20deg] z-0">
+            <Heart size={32} fill="#FF5A75" className="text-[#FF5A75]" />
+          </div>
+          <div className="absolute top-[40%] right-[0%] opacity-20 z-0">
+            <Heart size={16} fill="#FF5A75" className="text-[#FF5A75]" />
+          </div>
+
+          {/* The Phone Image */}
+          <div className="relative z-10">
             <img 
               src="\assets\app_screenshots\Kick-counter.png" 
-              alt="Mobile App View" 
-              className="w-72 md:w-80"
+              alt="App UI" 
+              className="w-72 md:w-[380px] h-auto drop-shadow-[0_30px_60px_rgba(255,90,117,0.25)]"
             />
+          </div>
         </div>
       </section>
 
