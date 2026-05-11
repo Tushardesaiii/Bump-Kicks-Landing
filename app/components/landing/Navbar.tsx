@@ -28,7 +28,7 @@ export const Navbar = () => {
     { label: "Pregnancy Reminders", href: "/features/pregnancy-reminders", },
     { label: "Doctor Report", href: "/features/doctor-report",  },
     { label: "Kick Counting", href: "/features/kick-counting",  },
-    { label: "10 in 2 Method", href: "/features/10-in-2-methods",  },
+    { label: "10 in 2 Method", href: "/features/10-in-2-method",  },
     { label: "Fetal Movement Tracker", href: "/features/fetal-movement-tracker",  }
   ];
 

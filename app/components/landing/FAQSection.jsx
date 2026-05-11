@@ -58,7 +58,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-32 px-6 bg-white">
+    <section className="py-20 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         {/* Header Section - Scaled Up */}
         <div className="text-center mb-20">

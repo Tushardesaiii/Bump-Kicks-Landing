@@ -111,7 +111,7 @@ const Testimonials = () => {
         </div>
 
         {/* Stats Summary Footer */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-10 border-t border-pink-100/50">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-4 border-t border-pink-100/50">
           <div className="flex items-center gap-3 bg-white px-5 py-2 rounded-full border border-gray-50">
             <span className="text-lg font-black text-[#111827]">4.8/5</span>
             <div className="flex gap-0.5">
