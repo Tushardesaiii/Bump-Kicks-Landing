@@ -95,27 +95,31 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex items-center gap-10">
             {/* Features Dropdown */}
-            <li className="relative group cursor-pointer">
+            <li className="relative group  cursor-pointer">
               <button
                 onMouseEnter={() => setFeaturesDropdownOpen(true)}
                 onMouseLeave={() => setFeaturesDropdownOpen(false)}
-                className="flex items-center gap-2 text-[15px] font-medium text-gray-600 hover:text-[#ff5a75] transition-colors"
+                className="flex items-center  gap-2 text-[15px] font-medium text-gray-600 hover:text-[#ff5a75] transition-colors"
               >
                 Features
                 <ChevronDown size={16} className={`transition-transform ${featuresDropdownOpen ? "rotate-180" : ""}`} />
               </button>
-              
-             {/* Production-Grade Morphing Dropdown */}
+            
+            {/* Simple Clean Premium Dropdown */}
+
 <div
   onMouseEnter={() => setFeaturesDropdownOpen(true)}
   onMouseLeave={() => setFeaturesDropdownOpen(false)}
   className={`
-    absolute -left-5 mt-4 w-72 
-    bg-white rounded-4xl p-2 
-    transition-all duration-500 ease-[cubic-bezier(0.2,1,0.2,1)] transform origin-top
-    ${featuresDropdownOpen 
-      ? "opacity-100 scale-100 translate-y-0 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)]" 
-      : "opacity-0 scale-[0.9] -translate-y-8 invisible"}
+    absolute left-0 top-full mt-2 w-64
+    rounded-2xl border border-[#ff5a6e]/50 bg-white  p-2
+    shadow-[0_12px_40px_rgba(0,0,0,0.08)]
+    transition-all duration-200 ease-out
+    ${
+      featuresDropdownOpen
+        ? "opacity-100 translate-y-0 visible  "
+        : "opacity-0 -translate-y-2 invisible   "
+    }
   `}
 >
   <div className="flex flex-col gap-1">
@@ -123,25 +127,18 @@ export const Navbar = () => {
       <a
         key={feature.label}
         href={feature.href}
-        className={`group relative flex items-center h-15 px-6 rounded-3xl transition-all duration-300 ${
-          isActivePath(feature.href) ? "bg-pink-50" : ""
-        }`}
+        className="
+          flex items-center rounded-xl px-4 py-3
+          text-[15px] font-medium text-gray-600
+          transition-all duration-200 
+          hover:bg-gray-50 hover:text-[#ff5a75]
+        "
       >
-        {/* THE ACTIVE STATE: This is the "Liquid" fill */}
-        <div className={`absolute inset-0 bg-gray-50 opacity-0 ${isActivePath(feature.href) ? "opacity-100 scale-100" : "group-hover:opacity-100 group-hover:scale-100 scale-[0.8]"} transition-all duration-400 ease-[cubic-bezier(0.2,1,0.2,1)] rounded-3xl`} />
-        
-        {/* THE CONTENT: Pure Typography */}
-        <span className={`relative z-10 text-[15px] font-bold transition-colors duration-300 tracking-tight ${isActivePath(feature.href) ? "text-[#ff5a75]" : "text-gray-500 group-hover:text-[#ff5a75]"}`}>
-          {feature.label}
-        </span>
-
-        {/* BORDER GLOW: Appears only on hover for that "Premium" feel */}
-        <div className="absolute inset-0 border border-[#ff5a75]/0 group-hover:border-[#ff5a75]/10 rounded-3xl transition-all duration-500" />
+        {feature.label}
       </a>
     ))}
   </div>
 </div>
-
 
 
 
@@ -189,11 +186,16 @@ export const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={`
-            lg:hidden overflow-hidden transition-all duration-300 ease-in-out
-            ${mobileMenuOpen ? "max-h-125 opacity-100" : "max-h-0 opacity-0"}
+            fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ease-in-out
+            ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
           `}
         >
-          <div className="px-4 sm:px-6 pb-6 pt-4 bg-white/95 backdrop-blur-xl border-t border-gray-100">
+          <div
+            className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+
+          <div className="absolute inset-x-0 top-0 px-4 sm:px-6 pb-6 pt-20 bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-lg">
             <ul className="flex flex-col gap-2">
               {/* Mobile Features Dropdown */}
               <li>
@@ -254,13 +256,6 @@ export const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/20 z-40 lg:hidden"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
     </>
   );
 };
