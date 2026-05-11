@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/components/landing/Featuregrid.jsx", "app/components/landing/FAQSection.jsx"  ],
+, "app/components/landing/Featuregrid.jsx", "app/components/landing/FAQSection.jsx", "app/features/kick-counting/page.jsx"  ],
   "exclude": ["node_modules"]
 }
