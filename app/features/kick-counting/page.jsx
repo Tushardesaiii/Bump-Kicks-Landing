@@ -2,9 +2,9 @@
 
 import {motion} from 'framer-motion';
 import React from 'react';
-import { Heart, BarChart3, Target, Bell, MousePointerClick, TrendingUp, ShieldCheck } from 'lucide-react';
+import { Heart, BarChart3, Target, Bell, AlarmClock , FileText , Check , CalendarHeart , HeartHandshake , Smile  } from 'lucide-react';
 
- const appleStoreBadge = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg";
+const appleStoreBadge = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg";
   const googlePlayBadge = "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg";
 
 export default function KickCountingPage()
@@ -104,20 +104,62 @@ export default function KickCountingPage()
         </div>
       </section>
 
-      {/* How it Works Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-2">How Kick Counting Works</h2>
-          <p className="text-slate-400 mb-16">Simple, intuitive, and designed for moms-to-be.</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <StepItem number="1" icon={<MousePointerClick />} title="Tap to Count" desc="Tap the button each time you feel a kick." />
-            <StepItem number="2" icon={<TrendingUp />} title="Track Progress" desc="Watch your daily count grow in real-time." />
-            <StepItem number="3" icon={<Target />} title="Reach Your Goal" desc="Stay motivated with goal tracking." />
-            <StepItem number="4" icon={<BarChart3 />} title="Review Insights" desc="Check reports to see trends and patterns." />
-          </div>
-        </div>
-      </section>
+    {/* How it Works Section */}
+<section className="py-24 bg-white overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h2 className="text-4xl font-bold text-slate-900 mb-3 tracking-tight">How Kick Counting Works</h2>
+    <p className="text-slate-400 text-lg mb-20 font-medium">Simple, intuitive, and designed for moms-to-be.</p>
+    
+    <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
+      
+      {/* Step 1 */}
+      <StepItem 
+        number="1" 
+        icon={ <AlarmClock size={32} className="text-[#ff5a75] relative z-10" />
+            } 
+        title="1. Tap to Count" 
+        desc="Tap the button each time you feel a kick." 
+      />
+
+      <ProcessArrow />
+
+      {/* Step 2 */}
+      <StepItem 
+        number="2" 
+        icon={<div className="relative">
+                <div className="absolute inset-0 bg-[#ff5a75] opacity-20 blur-sm rounded-sm"></div>
+              
+                <FileText  size={32} className="text-[#ff5a75] relative z-10" />
+              </div>} 
+        title="2. Track Progress" 
+        desc="Watch your daily count grow in real-time." 
+      />
+
+      <ProcessArrow />
+
+      {/* Step 3 */}
+      <StepItem 
+        number="3"
+        
+        icon={< CalendarHeart  size={32}  className="text-[#ff5a75]" />} 
+        title="3. Reach Your Goal" 
+        desc="Stay motivated with goal tracking." 
+      />
+
+      <ProcessArrow />
+
+      {/* Step 4 */}
+      <StepItem 
+        number="4" 
+        icon={<BarChart3 size={32} className="text-[#ff5a75]" />} 
+        title="4. Review Insights" 
+        desc="Check reports to see trends and patterns." 
+      />
+      
+    </div>
+  </div>
+</section>
+
 
       {/* Analytics Section */}
       <section className="py-20 bg-pink-50/30">
@@ -128,45 +170,77 @@ export default function KickCountingPage()
             <ul className="space-y-4">
               {['Best times of day', 'Daily averages', 'Weekly trends', 'Compare and stay informed'].map((item, idx) => (
                 <li key={idx} className="flex items-center space-x-3 text-slate-700 font-medium">
-                  <div className="bg-pink-100 p-1 rounded-full"><Heart size={14} className="fill-[#ff5a75] text-[#ff5a75]" /></div>
+                  <div className="bg-pink-100 p-1 rounded-full"><Check  size={14} className=" text-[#ff5a75]" /></div>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
           
-          {/* Chart Card Placeholder */}
-          <div className="md:w-1/2 w-full bg-white p-8 rounded-3xl shadow-sm border border-pink-100">
-             <div className="flex justify-between items-end mb-8">
-                <div>
-                   <p className="text-sm text-slate-400 font-medium">Kick Activity</p>
-                   <p className="text-4xl font-bold text-slate-800">264</p>
-                   <p className="text-xs text-slate-400">Total Kicks</p>
-                </div>
-                <select className="text-xs bg-slate-50 border-none rounded-lg p-2 outline-none">
-                  <option>This Week</option>
-                </select>
-             </div>
-             {/* Simple CSS Bar Chart Representation */}
-             <div className="flex items-end justify-between h-40 gap-2">
-                {[40, 60, 55, 30, 85, 45, 75].map((h, i) => (
-                  <div key={i} className="flex flex-col items-center flex-1">
-                    <div style={{ height: `${h}%` }} className={`w-full rounded-t-lg ${i === 4 ? 'bg-[#ff5a75]' : 'bg-pink-200'}`} />
-                    <span className="text-[10px] mt-2 text-slate-400 uppercase">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i]}</span>
-                  </div>
-                ))}
-             </div>
-          </div>
-        </div>
+          {/* Chart Card Section */}
+<div className="md:w-1/2 w-full bg-white p-10 rounded-[3rem]  border border-pink-50 relative overflow-hidden">
+  
+  <div className="flex justify-between items-start mb-12">
+    <div>
+      <p className="text-[13px] text-slate-400 font-bold mb-1 uppercase tracking-widest">Kick Activity</p>
+      <div className="flex items-baseline gap-2">
+        <p className="text-6xl font-black text-slate-900 tracking-tighter">264</p>
+        <p className="text-sm font-bold text-slate-400">Total Kicks</p>
+      </div>
+    </div>
+    
+    
+  </div>
+
+  {/* Increased container height to h-64 for better bar visibility */}
+  <div className="relative h-64 w-full flex items-end justify-between gap-3 md:gap-5 px-2 bg-slate-50/50 rounded-2xl p-4">
+    {[
+      { day: 'Mon', val: 45 },
+      { day: 'Tue', val: 65 },
+      { day: 'Wed', val: 55 },
+      { day: 'Thu', val: 40 },
+      { day: 'Fri', val: 95 }, // Friday highlight
+      { day: 'Sat', val: 50 },
+      { day: 'Sun', val: 75 }
+    ].map((item, i) => (
+      <div key={i} className="flex flex-col items-center flex-1 h-full justify-end group">
+        
+        {/* The Bar - Using absolute Hex codes for guaranteed color visibility */}
+        <motion.div 
+          initial={{ height: 0 }}
+          animate={{ height: `${item.val}%` }}
+          transition={{ duration: 1, ease: [0.23, 1, 0.32, 1], delay: i * 0.05 }}
+          className={`w-8 rounded-t-sm transition-all duration-300
+            ${i === 4 
+              ? 'bg-[#FF5A75] ' 
+              : 'bg-[#FFC2CD] opacity-80 group-hover:opacity-100'
+            }`}
+        />
+        
+        {/* Label - Absolute positioning to stay below the bars */}
+        <span className={`text-[12px] absolute -bottom-8 font-black uppercase tracking-tighter
+          ${i === 4 ? 'text-[#FF5A75]' : 'text-slate-400'}`}>
+          {item.day}
+        </span>
+      </div>
+    ))}
+  </div>
+  
+  {/* Extra margin for the absolute labels */}
+  <div className="h-8" /> 
+</div>
+
+    </div>
       </section>
 
       {/* Why Moms Love Section */}
       <section className="py-24 max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-16">Why Moms Love Kick Counting</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <ValueCard icon={<ShieldCheck className="text-[#ff5a75]" />} title="Peace of Mind" desc="Knowing your baby is active brings comfort and reassurance." />
-          <ValueCard icon={<Heart className="text-[#ff5a75]" />} title="Stronger Connection" desc="Track and connect with your baby's unique rhythm." />
-          <ValueCard icon={<Target className="text-[#ff5a75]" />} title="Backed by Experts" desc="Designed with input from healthcare professionals." />
+          <ValueCard icon={<Smile className="text-[#ff5a75] w-8 h-8" />} title="Peace of Mind" desc="Knowing your baby is active brings comfort and reassurance."  
+          />
+          <ValueCard icon={<HeartHandshake className="text-[#ff5a75] w-8 h-8" />} title="Stronger Connection" desc="Track and connect with your baby's unique rhythm." />
+          <ValueCard icon={<Target className="text-[#ff5a75] w-8 h-8" />} title="Backed by Experts" desc="Designed with input from healthcare professionals." />
         </div>
       </section>
 
@@ -177,10 +251,19 @@ export default function KickCountingPage()
             <h2 className="text-3xl font-bold mb-4">Start Counting Today</h2>
             <p className="text-slate-500">Join thousands of moms who trust Bumpi Kicks <br/> to track their baby's movements.</p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <AppBadge store="apple" dark />
-            <AppBadge store="google" dark />
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="flex items-center gap-4"
+          >
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <img src={appleStoreBadge} alt="App Store" className="h-[44px] w-auto" />
+            </a>
+            <a href="#" className="hover:opacity-80 transition-opacity">
+              <img src={googlePlayBadge} alt="Play Store" className="h-[44px] w-auto" />
+            </a>
+          </motion.div>
         </div>
       </section>
     </div>
@@ -200,32 +283,58 @@ function FeatureItem({ icon, title, desc }) {
   );
 }
 
-function StepItem({ icon, title, desc, number }) {
+function StepItem({ icon, title, desc }) {
   return (
-    <div className="flex flex-col items-center">
-      <div className="relative mb-6">
-        <div className="w-16 h-16 bg-pink-50 text-[#ff5a75] rounded-2xl flex items-center justify-center">
-          {React.cloneElement(icon, { size: 28 })}
-        </div>
-        <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#ff5a75] text-white rounded-full text-xs flex items-center justify-center border-4 border-white font-bold">
-          {number}
+    <div className="flex flex-col items-center flex-1">
+      <div className="mb-8 relative">
+        {/* The specific rounded-rect icon container */}
+        <div className="w-24 h-24 bg-[#FFF0F2] rounded-full flex items-center justify-center shadow-sm">
+          {icon}
         </div>
       </div>
-      <h3 className="font-bold mb-2">{title}</h3>
-      <p className="text-slate-400 text-sm">{desc}</p>
+
+      <h3 className="text-lg font-bold text-slate-900 mb-2">{title}</h3>
+      <p className="text-slate-400 text-sm leading-relaxed max-w-[180px]">
+        {desc}
+      </p>
+    </div>
+  );
+}
+
+function ProcessArrow() {
+  return (
+    <div className="hidden md:flex items-center justify-center h-24 pb-12">
+      {/* Replicating the subtle gray/pink arrow between steps */}
+      <svg 
+        width="24" 
+        height="24" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        className="text-[#ff5a6e]/55 w-6 h-6 mb-12" 
+        stroke="currentColor" 
+        strokeWidth="3" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      >
+        <path d="m9 18 6-6-6-6" />
+      </svg>
     </div>
   );
 }
 
 function ValueCard({ icon, title, desc }) {
   return (
-    <div className="p-8 rounded-3xl border border-slate-100 hover:border-pink-200 transition-colors bg-white text-center">
-      <div className="flex justify-center mb-6">
-        <div className="bg-pink-50 p-4 rounded-full">{icon}</div>
-      </div>
-      <h3 className="font-bold mb-3">{title}</h3>
-      <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+    <div className="p-6 rounded-3xl  bg-white flex items-start gap-6 text-left group">
+  <div className="shrink-0">
+    <div className=" p-4 rounded-2xl text-[#ff5a75]">
+      {icon}
     </div>
+  </div>
+  <div>
+    <h3 className="font-semibold text-lg text-slate-900 mb-2">{title}</h3>
+    <p className="text-slate-500 text-sm leading-relaxed max-w-sm">{desc}</p>
+  </div>
+</div>
   );
 }
 
