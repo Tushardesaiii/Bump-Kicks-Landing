@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import { motion } from 'framer-motion';
 import React from 'react';
@@ -86,40 +86,40 @@ export default function DoctorReportPage() {
       <section className="py-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Doctor-Ready Reporting</h2>
+            <h2 className="text-4xl font-medium text-slate-900 mb-4">Doctor-Ready Reporting</h2>
             <p className="text-slate-500 max-w-2xl mx-auto">Transform your data into professional summaries mentioned across modern kick tracking apps.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             {/* PDF Preview Card */}
-            <div className="bg-white p-6 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden group">
-                <div className="absolute inset-0 bg-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
-                    <button className="bg-white text-slate-900 px-6 py-2 rounded-full font-bold flex items-center gap-2">
-                        Preview <ArrowRight size={16} />
+            <div className="bg-white p-6  rounded-[2.5rem] border border-slate-200  relative overflow-hidden group">
+              
+                <div className="absolute inset-0  opacity-100 transition-opacity flex items-center justify-center z-20">
+                    <button className=" text-slate-900 px-6 py-2 rounded-full font-bold flex items-center gap-2">
+                         <FileText className='text-red-400' size={48} />
                     </button>
                 </div>
                 <div className="flex justify-between items-center mb-6">
                     <div className="flex items-center gap-2">
-                        <div className="bg-red-50 p-2 rounded-lg text-red-500"><FileText size={18} /></div>
-                        <span className="text-sm font-bold text-slate-800">weekly_report.pdf</span>
+                        
+                        <span className="text-sm font-semibold text-slate-800">weekly_report.pdf</span>
                     </div>
-                    <span className="text-[10px] font-bold text-slate-400">2.4 MB</span>
+                    <span className="text-[10px] text-slate-400">2.4 MB</span>
                 </div>
                 <div className="space-y-3 opacity-60">
                     <div className="h-4 bg-slate-50 rounded-lg w-full" />
                     <div className="h-4 bg-slate-50 rounded-lg w-3/4" />
                     <div className="h-32 bg-slate-50 rounded-2xl w-full flex items-center justify-center">
-                        <BarChart3 size={40} className="text-slate-200" />
-                    </div>
+                          </div>
                 </div>
             </div>
 
             {/* Session History Table */}
-            <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm lg:col-span-2">
+            <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200  lg:col-span-2">
                 <div className="flex justify-between items-center mb-8">
-                    <h3 className="font-bold text-slate-800 flex items-center gap-2">
-                        <Table size={18} className="text-[#FF5A75]" /> Recent Sessions
+                    <h3 className=" text-slate-800 flex items-center gap-4 font-medium">
+                        <Table size={18} className="text-[#FF5A75] " />Recent Sessions
                     </h3>
                     <button className="text-xs font-bold text-[#FF5A75] hover:underline">View All</button>
                 </div>
@@ -141,11 +141,11 @@ export default function DoctorReportPage() {
                                 { date: 'May 08', dur: '15m', count: 10, int: 'Active' },
                             ].map((row, i) => (
                                 <tr key={i} className="border-b border-slate-50/50 group">
-                                    <td className="py-4 font-bold text-slate-700">{row.date}</td>
+                                    <td className="py-4  text-slate-700">{row.date}</td>
                                     <td className="py-4 text-slate-500">{row.dur}</td>
-                                    <td className="py-4 font-black text-slate-900">{row.count}</td>
+                                    <td className="py-4  text-slate-900">{row.count}</td>
                                     <td className="py-4">
-                                        <span className="px-3 py-1 bg-pink-50 text-[#FF5A75] rounded-full text-[10px] font-bold">{row.int}</span>
+                                        <span className="px-3 py-1 bg-pink-50 text-[#FF5A75] rounded-full text-[10px] font-semibold">{row.int}</span>
                                     </td>
                                     <td className="py-4 text-right">
                                         <button className="p-2 hover:bg-slate-50 rounded-lg transition-colors"><Download size={14} className="text-slate-400" /></button>
@@ -158,10 +158,10 @@ export default function DoctorReportPage() {
             </div>
 
             {/* Medical Summary Card */}
-            <div className="bg-[#111827] p-8 rounded-[2.5rem] text-white shadow-xl">
+            <div className="bg-black p-8 rounded-[2.5rem] text-white ">
                 <div className="flex justify-between items-start mb-10">
                     <div>
-                        <h3 className="font-bold text-lg mb-1">Medical Summary</h3>
+                        <h3 className="font-medium text-lg mb-1">Medical Summary</h3>
                         <p className="text-slate-400 text-[10px] uppercase tracking-widest">May 01 - May 10</p>
                     </div>
                     <div className="bg-white/10 p-2 rounded-xl"><ClipboardList size={18} /></div>
@@ -183,8 +183,8 @@ export default function DoctorReportPage() {
             </div>
 
             {/* Movement Heatmap Visual */}
-            <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm overflow-hidden">
-                <h3 className="font-bold text-slate-800 mb-6">Movement Heatmap</h3>
+            <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200  overflow-hidden">
+                <h3 className="font-medium text-slate-800 mb-6">Movement Heatmap</h3>
                 <div className="grid grid-cols-7 gap-2">
                     {Array.from({ length: 28 }).map((_, i) => {
                         const opacity = [0.1, 0.3, 0.6, 0.9, 0.4, 0.2, 0.5, 0.8, 1, 0.7][i % 10];
@@ -193,6 +193,7 @@ export default function DoctorReportPage() {
                                 key={i}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
                                 transition={{ delay: i * 0.01 }}
                                 className="aspect-square rounded-md"
                                 style={{ backgroundColor: `rgba(255, 90, 117, ${opacity})` }}
@@ -207,19 +208,20 @@ export default function DoctorReportPage() {
             </div>
 
             {/* Export Success Animation Card */}
-            <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm flex flex-col items-center justify-center text-center">
+            <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200 flex flex-col items-center justify-center text-center">
                 <motion.div 
                     initial={{ scale: 0.5, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
                     className="w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mb-6"
                 >
                     <CheckCircle2 size={40} />
                 </motion.div>
-                <h3 className="font-bold text-slate-800 mb-2">Export Success</h3>
+                <h3 className="font-medium text-slate-800 mb-2">Export Success</h3>
                 <p className="text-sm text-slate-400 mb-6">Your medical report has been generated and is ready to share.</p>
                 <div className="flex gap-2">
                     <button className="p-3 bg-slate-50 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors"><Printer size={18} /></button>
-                    <button className="px-6 py-3 bg-[#FF5A75] text-white rounded-xl font-bold text-sm shadow-lg shadow-pink-200">Send to Doctor</button>
+                    <button className="px-6 py-3 bg-[#FF5A75] text-white rounded-xl font-semibold text-sm">Send to Doctor</button>
                 </div>
             </div>
 
@@ -230,22 +232,22 @@ export default function DoctorReportPage() {
       {/* Benefits Section */}
       <section className="py-24 max-w-7xl mx-auto px-6 text-center">
         <div className="bg-[#FFFBFC] p-16 rounded-[3rem] border border-pink-50">
-            <h2 className="text-3xl font-bold mb-8 text-slate-900">Be Prepared for Every Appointment</h2>
+            <h2 className="text-3xl font-medium mb-8 text-slate-900">Be Prepared for Every Appointment</h2>
             <p className="text-slate-500 max-w-3xl mx-auto text-lg leading-relaxed">
                 Keeping a structured movement history helps expecting moms feel more informed and prepared during prenatal appointments while making important information easier to discuss.
             </p>
             <div className="mt-12 flex flex-wrap justify-center gap-10">
                 <div className="flex flex-col items-center gap-2">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-pink-50 text-[#FF5A75]"><ClipboardList /></div>
-                    <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">Informed Discussions</span>
+                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center  border border-pink-50 text-[#FF5A75]"><ClipboardList /></div>
+                    <span className="text-xs  text-slate-600 tracking-widest">Informed Discussions</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-pink-50 text-[#FF5A75]"><Layout /></div>
-                    <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">Structured History</span>
+                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center border border-pink-50 text-[#FF5A75]"><Layout /></div>
+                    <span className="text-xs  text-slate-600 tracking-widest">Structured History</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-pink-50 text-[#FF5A75]"><Share2 /></div>
-                    <span className="text-xs font-bold text-slate-600 uppercase tracking-widest">Easy Sharing</span>
+                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center  border border-pink-50 text-[#FF5A75]"><Share2 /></div>
+                    <span className="text-xs  text-slate-600  tracking-widest">Easy Sharing</span>
                 </div>
             </div>
         </div>
@@ -255,7 +257,7 @@ export default function DoctorReportPage() {
       <section className="mb-24 mx-6">
         <div className="max-w-7xl mx-auto bg-pink-50/50 rounded-[2.5rem] p-12 md:p-20 flex flex-col md:flex-row justify-between items-center border border-pink-100">
           <div className="text-center md:text-left mb-8 md:mb-0">
-            <h2 className="text-3xl font-bold mb-4">Empower Your Health Care</h2>
+            <h2 className="text-3xl font-semibold mb-4">Empower Your Health Care</h2>
             <p className="text-slate-500">Download Bumpi Kicks and start generating <br/> professional reports for your next appointment.</p>
           </div>
           <motion.div 

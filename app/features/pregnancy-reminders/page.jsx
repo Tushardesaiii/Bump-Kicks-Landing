@@ -215,6 +215,7 @@ export default function PregnancyRemindersPage() {
                             <motion.div 
                                 initial={{ height: 0 }}
                                 whileInView={{ height: `${val * 1.2}px` }}
+                                viewport={{ once: true }}
                                 transition={{ duration: 1, delay: i * 0.05 }}
                                 className={`w-3 rounded-full ${val === 100 ? 'bg-[#FF5A75]' : 'bg-pink-100'}`}
                             />

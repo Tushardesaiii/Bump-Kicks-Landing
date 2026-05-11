@@ -1,17 +1,37 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export const Navbar = () => {
+  const pathname = usePathname();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
+  const [activeHash, setActiveHash] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [featuresDropdownOpen, setFeaturesDropdownOpen] = useState(false);
   const [mobileFeatureOpen, setMobileFeatureOpen] = useState(false);
 
+  const isActivePath = (href: string) => {
+    if (!pathname) return false;
+
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const isActiveHashLink = (href: string) => pathname === "/" && activeHash === href;
+
   useEffect(() => {
+    const updateHash = () => setActiveHash(window.location.hash);
+
+    updateHash();
+
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       setIsAtTop(currentScrollPos < 10);
@@ -20,7 +40,12 @@ export const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", updateHash);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", updateHash);
+    };
   }, [prevScrollPos]);
 
   const features = [
@@ -54,7 +79,7 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 flex items-center justify-between">
           
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer shrink-0">
+          <Link href="/" className="flex items-center gap-2 cursor-pointer shrink-0">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
               <img
                 src="/playstore.png"
@@ -65,7 +90,7 @@ export const Navbar = () => {
             <span className="text-[18px] sm:text-[22px] font-bold text-gray-900 tracking-tight whitespace-nowrap">
               Bumpi Kicks
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex items-center gap-10">
@@ -80,40 +105,58 @@ export const Navbar = () => {
                 <ChevronDown size={16} className={`transition-transform ${featuresDropdownOpen ? "rotate-180" : ""}`} />
               </button>
               
-              {/* Dropdown Menu */}
-              <div
-                onMouseEnter={() => setFeaturesDropdownOpen(true)}
-                onMouseLeave={() => setFeaturesDropdownOpen(false)}
-                className={`absolute left-0 mt-3 w-96 bg-white rounded-3xl border border-white/60 overflow-hidden transition-all duration-300 transform origin-top ${
-                  featuresDropdownOpen ? "opacity-100 scale-y-100 visible" : "opacity-0 scale-y-95 invisible"
-                }`}
-                style={{
-                  boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6)"
-                }}
-              >
-                <div className="p-4">
-                  <div className="grid grid-cols-2 gap-2">
-                    {features.map((feature) => (
-                      <a
-                        key={feature.label}
-                        href={feature.href}
-                        className="group/item px-4 py-4 rounded-xl hover:bg-white/50 hover:backdrop-blur-xl transition-all duration-200"
-                      >
-                        <span className="text-[13px] font-semibold text-gray-900 group-hover/item:text-[#ff5a75] transition-colors block leading-tight">
-                          {feature.label}
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
+             {/* Production-Grade Morphing Dropdown */}
+<div
+  onMouseEnter={() => setFeaturesDropdownOpen(true)}
+  onMouseLeave={() => setFeaturesDropdownOpen(false)}
+  className={`
+    absolute -left-5 mt-4 w-72 
+    bg-white rounded-4xl p-2 
+    transition-all duration-500 ease-[cubic-bezier(0.2,1,0.2,1)] transform origin-top
+    ${featuresDropdownOpen 
+      ? "opacity-100 scale-100 translate-y-0 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)]" 
+      : "opacity-0 scale-[0.9] -translate-y-8 invisible"}
+  `}
+>
+  <div className="flex flex-col gap-1">
+    {features.map((feature) => (
+      <a
+        key={feature.label}
+        href={feature.href}
+        className={`group relative flex items-center h-15 px-6 rounded-3xl transition-all duration-300 ${
+          isActivePath(feature.href) ? "bg-pink-50" : ""
+        }`}
+      >
+        {/* THE ACTIVE STATE: This is the "Liquid" fill */}
+        <div className={`absolute inset-0 bg-gray-50 opacity-0 ${isActivePath(feature.href) ? "opacity-100 scale-100" : "group-hover:opacity-100 group-hover:scale-100 scale-[0.8]"} transition-all duration-400 ease-[cubic-bezier(0.2,1,0.2,1)] rounded-3xl`} />
+        
+        {/* THE CONTENT: Pure Typography */}
+        <span className={`relative z-10 text-[15px] font-bold transition-colors duration-300 tracking-tight ${isActivePath(feature.href) ? "text-[#ff5a75]" : "text-gray-500 group-hover:text-[#ff5a75]"}`}>
+          {feature.label}
+        </span>
+
+        {/* BORDER GLOW: Appears only on hover for that "Premium" feel */}
+        <div className="absolute inset-0 border border-[#ff5a75]/0 group-hover:border-[#ff5a75]/10 rounded-3xl transition-all duration-500" />
+      </a>
+    ))}
+  </div>
+</div>
+
+
+
+
+             
             </li>
 
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="text-[15px] font-medium text-gray-600 hover:text-[#ff5a75] transition-colors"
+                  className={`text-[15px] font-medium transition-colors ${
+                    isActiveHashLink(link.href)
+                      ? "text-[#ff5a75]"
+                      : "text-gray-600 hover:text-[#ff5a75]"
+                  }`}
                 >
                   {link.label}
                 </a>
@@ -172,7 +215,9 @@ export const Navbar = () => {
                           setMobileMenuOpen(false);
                           setMobileFeatureOpen(false);
                         }}
-                        className="block py-2 px-4 text-[14px] font-medium text-gray-600 hover:text-[#ff5a75] transition-colors"
+                        className={`block py-2 px-4 text-[14px] font-medium transition-colors ${
+                          isActivePath(feature.href) ? "text-[#ff5a75]" : "text-gray-600 hover:text-[#ff5a75]"
+                        }`}
                       >
                         {feature.label}
                       </a>
@@ -186,7 +231,11 @@ export const Navbar = () => {
                   <a
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block py-3 px-4 rounded-2xl text-[15px] font-medium text-gray-700 hover:bg-pink-50 hover:text-[#ff5a75] transition-all"
+                    className={`block py-3 px-4 rounded-2xl text-[15px] font-medium transition-all ${
+                      isActiveHashLink(link.href)
+                        ? "bg-pink-50 text-[#ff5a75]"
+                        : "text-gray-700 hover:bg-pink-50 hover:text-[#ff5a75]"
+                    }`}
                   >
                     {link.label}
                   </a>
