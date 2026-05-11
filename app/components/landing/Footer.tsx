@@ -23,10 +23,10 @@ export function Footer() {
   return (
     <footer className="bg-[#FF5A6E]/8 pt-20 pb-10 border-t border-pink-100">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-16">
           
           {/* Logo and Social Section */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
                 <img src="/playstore.png" alt="logo" className="w-full h-full object-cover" />
@@ -46,7 +46,7 @@ export function Footer() {
           </div>
 
           {/* Links Sections */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <h4 className="font-bold text-sm text-gray-900 mb-6 uppercase tracking-wider">Product</h4>
               <ul className="space-y-4 text-[14px] text-gray-600">

@@ -53,22 +53,6 @@ export function HeroSection() {
           every little movement. Because every kick counts.
         </motion.p>
 
-        {/* 4. Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-8"
-        >
-          <a className="flex items-center gap-2.5 bg-[#ff5a75] text-white px-10 py-4 rounded-full text-lg hover:shadow-2xl hover:shadow-pink-200 transition-all active:scale-95"
-             href="http://apps.apple.com/us/app/bumpi-kicks-baby-kick-counter/id6765884727" target="_blank" rel="noopener noreferrer">
-            <Download size={20} strokeWidth={3} />
-            Get the App
-          </a>
-
-         
-        </motion.div>
-
         {/* 5. Rating Component */}
         <motion.div 
           initial={{ opacity: 0 }}

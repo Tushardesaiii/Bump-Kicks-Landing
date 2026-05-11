@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { Star, Heart } from 'lucide-react';
 
 const TestimonialCard = ({ quote, name, image }) => (
-  <div className="flex-shrink-0 w-[85vw] md:w-full flex flex-col items-center p-8 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-pink-50/50 text-center transition-all duration-300">
+  <div className="shrink-0 w-[85vw] md:w-full h-96 flex flex-col items-center p-8 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-pink-50/50 text-center transition-all duration-300">
     {/* Five Star Rating */}
     <div className="flex gap-1 mb-6">
       {[...Array(5)].map((_, i) => (
@@ -13,7 +13,7 @@ const TestimonialCard = ({ quote, name, image }) => (
     </div>
 
     {/* Quote */}
-    <p className="text-[#4B5563] text-[15px] md:text-[16px] leading-relaxed mb-8 font-medium italic">
+    <p className="text-[#4B5563] text-[15px] md:text-[16px] leading-relaxed mb-8 font-medium italic flex-1 overflow-hidden line-clamp-4">
       "{quote}"
     </p>
 
@@ -103,7 +103,7 @@ const Testimonials = () => {
             className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
           >
             {reviews.map((review, index) => (
-              <div key={index} className="snap-center flex-shrink-0 md:flex-shrink">
+              <div key={index} className="snap-center shrink-0 md:shrink">
                 <TestimonialCard {...review} />
               </div>
             ))}
@@ -112,7 +112,7 @@ const Testimonials = () => {
 
         {/* Stats Summary Footer */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-10 border-t border-pink-100/50">
-          <div className="flex items-center gap-3 bg-white px-5 py-2 rounded-full shadow-sm border border-gray-50">
+          <div className="flex items-center gap-3 bg-white px-5 py-2 rounded-full border border-gray-50">
             <span className="text-lg font-black text-[#111827]">4.8/5</span>
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
