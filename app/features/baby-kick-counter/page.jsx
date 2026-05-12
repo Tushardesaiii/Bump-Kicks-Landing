@@ -74,7 +74,7 @@ export default function BabyKickCounterPage() {
 
           <div className="relative z-10">
             <img 
-              src="/assets/app_screenshots/Kick-counter.png" 
+              src="/assets/app_screenshots/Kick-counting.png" 
               alt="Baby Kick Counter" 
               className="w-72 md:w-95 h-auto drop-shadow-[0_30px_60px_rgba(255,90,117,0.25)]"
             />

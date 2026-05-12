@@ -74,7 +74,7 @@ export default function TenInTwoMethodPage() {
 
           <div className="relative z-10">
             <img 
-              src="/assets/app_screenshots/Kick-counter.png" 
+              src="/assets/app_screenshots/10-2.png" 
               alt="10 in 2 Method" 
               className="w-72 md:w-[380px] h-auto drop-shadow-[0_30px_60px_rgba(255,90,117,0.25)]"
             />
